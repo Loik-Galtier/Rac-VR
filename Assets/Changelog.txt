@@ -1,0 +1,12 @@
+- Go to 6000.3.10f1 to correct vulnerability issue.
+
+WARNING: can't update Amplify Shader Editor (no licence for), need to update if possible.
+- Low the smallest occluded for occlusion, and correct some clipping texture.
+- Optimise mesh: SM_Vista_House_04, SM_Vista_Trees_01 (on a new mesh)
+- New scene :
+	- Added birds effect (for now it's flying rats)
+	- wanted to use the bridge so much
+	- Recalculate Light with Ambient Occlusion OpenImageDenoise (from Optix) (because my hardware is not adapted for)
+
+- Script :
+	- Replace comment block (made by // all line) to /* */ 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 286186586779959534}
   - component: {fileID: 103659166740646681}
-  - component: {fileID: 3460744974896402393}
+  - component: {fileID: 1701902213958679044}
   m_Layer: 0
   m_Name: SM_Vista_House_04
   m_TagString: Untagged
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6693814119339293599}
   m_Mesh: {fileID: -1733416078496555023, guid: 711bf7c4fe5daeb46959d48a3da31a9e, type: 3}
---- !u!23 &3460744974896402393
+--- !u!23 &1701902213958679044
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,6 +61,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -82,7 +84,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}

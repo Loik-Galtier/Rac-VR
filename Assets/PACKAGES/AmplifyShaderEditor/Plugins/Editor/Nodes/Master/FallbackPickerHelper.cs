@@ -38,19 +38,34 @@ namespace AmplifyShaderEditor
 			EditorGUILayout.EndHorizontal();
 		}
 
-		private void DisplayShaderContext( ParentNode node, Rect r )
-		{
-			if ( m_dummyCommand == null )
-				m_dummyCommand = new MenuCommand( this, 0 );
 
-			if ( m_dummyMaterial == null )
-				m_dummyMaterial = new Material( Shader.Find( "Hidden/ASESShaderSelectorUnlit" ) );
+        // temorary fix, update Amplify Shader Editor 
 
-#pragma warning disable 0618
-			UnityEditorInternal.InternalEditorUtility.SetupShaderMenu( m_dummyMaterial );
-#pragma warning restore 0618
-			EditorUtility.DisplayPopupMenu( r, ShaderPoputContext, m_dummyCommand );
-		}
+        private void DisplayShaderContext(ParentNode node, Rect r)
+        {
+            if (m_dummyCommand == null)
+                m_dummyCommand = new MenuCommand(this, 0);
+
+            if (m_dummyMaterial == null)
+                m_dummyMaterial = new Material(Shader.Find("Hidden/ASESShaderSelectorUnlit"));
+
+         
+            Shader[] allShaders = Resources.FindObjectsOfTypeAll<Shader>(); // correction there
+            GenericMenu shaderMenu = new GenericMenu();
+
+            foreach (var shader in allShaders)
+            {
+                if (shader != null && !ShaderUtil.ShaderHasError(shader))
+                {
+                    shaderMenu.AddItem(new GUIContent(shader.name), false, () =>
+                    {
+                        OnSelectedShaderPopup(shader.name, shader);
+                    });
+                }
+            }
+
+            shaderMenu.DropDown(r);
+        }
 
 		private void OnSelectedShaderPopup( string command, Shader shader )
 		{

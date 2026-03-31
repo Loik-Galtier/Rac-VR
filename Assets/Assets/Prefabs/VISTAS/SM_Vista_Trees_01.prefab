@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5747609488228727908}
   - component: {fileID: 3719670398365851659}
-  - component: {fileID: 1480713816871495898}
+  - component: {fileID: 1913743711875752870}
   m_Layer: 0
   m_Name: SM_Vista_Trees_01
   m_TagString: Untagged
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9146403076179932883}
   m_Mesh: {fileID: -9033838203549585352, guid: f82dc8bdbb425d54db2737fd95e5bd25, type: 3}
---- !u!23 &1480713816871495898
+--- !u!23 &1913743711875752870
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,6 +61,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -82,7 +84,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
