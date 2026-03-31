@@ -6,7 +6,7 @@ OcclusionCullingSettings:
   serializedVersion: 2
   m_OcclusionBakeSettings:
     smallestOccluder: 0.75
-    smallestHole: 0.25
+    smallestHole: 0.1
     backfaceThreshold: 100
   m_SceneGUID: 676855aa67b6a8e42934733f51ce63d8
   m_OcclusionCullingData: {fileID: 36300000, guid: 36930c4fb3e98064d82c66457ca7a5ed, type: 2}
@@ -12887,7 +12887,6 @@ MonoBehaviour:
   - {fileID: 7858233335272638170, guid: 1dee38978a41077488405059bc816f6e, type: 3}
   - {fileID: 449578393326530535, guid: c70e8c0c0e37af247a8fa4f7c856e531, type: 3}
   - {fileID: 8380739073051117467, guid: fc8c2fc16a1eb1e40a89a062db8c6170, type: 3}
-  sessionTime: 300
   remainingCharactersText: {fileID: 750911847}
   remainingCharactersUI: {fileID: 1730522975}
   charactersCompletedUI: {fileID: 1047533289}
@@ -12945,6 +12944,7 @@ MonoBehaviour:
   maxHeight: 2
   minHeight: 0.9
   leftJoystick: {fileID: -60998027439631388, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  buttonY: {fileID: 2678849108659902308, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   xrOrigin: {fileID: 37531168}
 --- !u!1001 &160365715
 PrefabInstance:

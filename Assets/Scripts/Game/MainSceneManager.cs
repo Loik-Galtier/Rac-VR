@@ -13,7 +13,6 @@ public class MainSceneManager : MonoBehaviour, IGameManager
     [Header("Session Settings")]
     [SerializeField] int questsPerSession = 3;
     [SerializeField] GameObject[] questPresets;
-    [SerializeField] float sessionTime = 300f;
     [SerializeField] TextMeshProUGUI remainingCharactersText;
     [SerializeField] GameObject remainingCharactersUI;
     [SerializeField] GameObject charactersCompletedUI;
@@ -47,8 +46,6 @@ public class MainSceneManager : MonoBehaviour, IGameManager
 
     int remainingCharacters = 3;
     int questCompleted = 0;
-    bool inGame = false;
-    float timer = 0;
 
     static int sessionCount = 0;
 
@@ -70,15 +67,6 @@ public class MainSceneManager : MonoBehaviour, IGameManager
 
     void Update()
     {
-        if (inGame)
-        {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
-            {
-                EndSession();
-            }
-        }
-
         SwitchMovementMode();
         ActiveMenuCanvas();
     }
@@ -108,17 +96,16 @@ public class MainSceneManager : MonoBehaviour, IGameManager
 
         InitializeQuests();
 
-        timer = sessionTime;
+        TimeManager.Instance.isInGame = true;
     }
 
     private void EndSession()
     {
-        timer = 0;
         Inventory.instance.ClearInventory();
+        Inventory.instance.gameObject.SetActive(false);
 
         endGamePanel.SetActive(true);
         questCanvas.SetActive(false);
-        inGame = false;
 
         endSessionSound.Play();
     }
@@ -160,6 +147,11 @@ public class MainSceneManager : MonoBehaviour, IGameManager
         q.IncreaseIncorrect();
 
         CheckCompleteAllQuests();
+    }
+
+    public void SessionTimeout()
+    {
+        EndSession();
     }
 
     void CheckCompleteAllQuests()
@@ -269,6 +261,7 @@ public class MainSceneManager : MonoBehaviour, IGameManager
         if (menuButton.action.WasPerformedThisFrame())
         {
             menuCanvas.SetActive(!menuCanvas.activeInHierarchy);
+            PauseOnMenu();
             languageDropdown.Hide();
         }
     }
@@ -292,6 +285,22 @@ public class MainSceneManager : MonoBehaviour, IGameManager
 
         menuCanvas.SetActive(false);
         languageDropdown.SetValueWithoutNotify(-1);
+    }
+
+    void PauseOnMenu()
+    {
+        if (menuCanvas.activeInHierarchy)
+        {
+            moveProvider.SetActive(false);
+            teleportProvider.SetActive(false);
+            Inventory.instance.gameObject.SetActive(false);
+        }
+        else
+        {
+            moveProvider.SetActive(true);
+            teleportProvider.SetActive(true);
+            Inventory.instance.gameObject.SetActive(true);
+        }
     }
     #endregion
 }

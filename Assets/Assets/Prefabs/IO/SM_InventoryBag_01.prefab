@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8171793416574136682}
-  - component: {fileID: 4839820553992044527}
   - component: {fileID: 8132326235144270159}
+  - component: {fileID: 909081285476134755}
   m_Layer: 3
   m_Name: ClickInteractable
   m_TagString: Untagged
@@ -27,33 +27,12 @@ Transform:
   m_GameObject: {fileID: 2649086446574384216}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.303, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.037, y: -0.373, z: -0.015}
+  m_LocalScale: {x: 0.41664, y: 0.41664, z: 0.41664}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2491769978177773385}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4839820553992044527
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2649086446574384216}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8132326235144270159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +117,27 @@ MonoBehaviour:
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_StartingInteractionStrengthFilters: []
+--- !u!135 &909081285476134755
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2649086446574384216}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2310955357551471446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -274,6 +274,10 @@ PrefabInstance:
       value: SM_InventoryBag_01
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f04b2762d2fd82247a30a3167c8e5f88, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f04b2762d2fd82247a30a3167c8e5f88, type: 3}
       propertyPath: m_TagString
       value: Inventory
       objectReference: {fileID: 0}
@@ -332,9 +336,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b228158c187f6a747ab48d317b8df0fa, type: 3}
   minPitch: 0.9
   maxPitch: 1.1
-  groundOffset: 0.65
-  cameraOffset: {x: -0.1549997, y: 0, z: -0.06000042}
-  cameraTransform: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
+  targetTransform: {fileID: 0}
   smoothSpeed: 30
   interactionManager: {fileID: 0}
 --- !u!135 &5465567868270438606

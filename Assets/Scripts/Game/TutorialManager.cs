@@ -110,6 +110,8 @@ public class TutorialManager : MonoBehaviour, IGameManager
 
         moveProvider.SetActive(true);
         teleportProvider.SetActive(true);
+
+        TimeManager.Instance.isInGame = true;
     }
 
     public void Reached1stDestination()
@@ -179,11 +181,17 @@ public class TutorialManager : MonoBehaviour, IGameManager
         
     }
 
+    public void SessionTimeout()
+    {
+        EndTutorial();
+    }
+
     void EndTutorial()
     {
         binCanvas.SetActive(false);
         finishCanvas.SetActive(true);
         endTutorialSound.Play();
+        // Inventory.instance.gameObject.SetActive(false);
     }
 
     public void LoadMainScene()

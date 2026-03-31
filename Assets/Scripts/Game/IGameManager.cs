@@ -6,4 +6,5 @@ public interface IGameManager
     void MinusScore(Quest quest);
     void AddQuest(Quest quest, GameObject wastes, string desKey);
     void CompleteQuest(Quest quest);
+    void SessionTimeout();
 }

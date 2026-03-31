@@ -22,6 +22,8 @@ public class CanvasFollower : MonoBehaviour
 
     void LateUpdate()
     {
+        if (cameraTransform == null) cameraTransform = Camera.main.transform;
+
         Vector3 targetPosition = cameraTransform.position + (cameraTransform.forward * distanceFromCamera.z)
          + (cameraTransform.up * distanceFromCamera.y) + (cameraTransform.right * distanceFromCamera.x);
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * smoothSpeed);
